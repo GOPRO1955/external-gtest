@@ -6,7 +6,7 @@ of every change, see the Git log.
 
 Latest
 ------
-* TBD
+* Minor: Updated to gtest from 1.6.0 to 1.7.0
 
 2.1.3
 -----
@@ -29,7 +29,7 @@ Latest
 
 2.0.7
 -----
-* Bugfix: Always include std::tuple from <tuple> in order to compile 
+* Bugfix: Always include std::tuple from <tuple> in order to compile
   with clang's C++ library.
 * Minor: Removed all binary files
 
