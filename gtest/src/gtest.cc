@@ -2222,6 +2222,30 @@ TestInfo* MakeAndRegisterTestInfo(
     SetUpTestCaseFunc set_up_tc,
     TearDownTestCaseFunc tear_down_tc,
     TestFactoryBase* factory) {
+  std::cout << "test_case_name: ";
+  if (test_case_name)
+      std::cout << test_case_name << " /len: "
+                << strlen(test_case_name) << std::endl;
+  else std::cout << "NULL" << std::endl;
+
+  std::cout << "name: ";
+  if (name)
+      std::cout << name << " /len: "
+      << strlen(name) << std::endl;
+  else std::cout << "NULL" << std::endl;
+
+  std::cout << "type_param: ";
+  if (type_param)
+      std::cout << type_param << " /len: "
+      << strlen(type_param) << std::endl;
+  else std::cout << "NULL" << std::endl;
+
+  std::cout << "value_param: ";
+  if (value_param)
+      std::cout << value_param << " /len: "
+      << strlen(value_param) << std::endl;
+  else std::cout << "NULL" << std::endl;
+
   TestInfo* const test_info =
       new TestInfo(test_case_name, name, type_param, value_param,
                    fixture_class_id, factory);
