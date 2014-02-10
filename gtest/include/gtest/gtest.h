@@ -695,8 +695,8 @@ class GTEST_API_ TestInfo {
 
   // Constructs a TestInfo object. The newly constructed instance assumes
   // ownership of the factory object.
-  TestInfo(const std::string& test_case_name,
-           const std::string& name,
+  TestInfo(std::string test_case_name,
+           std::string name,
            const char* a_type_param,   // NULL if not a type-parameterized test
            const char* a_value_param,  // NULL if not a value-parameterized test
            internal::TypeId fixture_class_id,
