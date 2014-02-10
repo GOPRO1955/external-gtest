@@ -2246,10 +2246,13 @@ TestInfo* MakeAndRegisterTestInfo(
       << strlen(value_param) << std::endl;
   else std::cout << "NULL" << std::endl;
 
+  std::cout << "Creating test info" << std::endl;
   TestInfo* const test_info =
       new TestInfo(test_case_name, name, type_param, value_param,
                    fixture_class_id, factory);
+  std::cout << "Add test info" << std::endl;
   GetUnitTestImpl()->AddTestInfo(set_up_tc, tear_down_tc, test_info);
+  std::cout << "Before return" << std::endl;
   return test_info;
 }
 
