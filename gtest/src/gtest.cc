@@ -2189,7 +2189,7 @@ TestInfo::TestInfo(const std::string& a_test_case_name,
       is_disabled_(false),
       matches_filter_(false),
       factory_(factory),
-      result_() {}
+      result_() { std::cout << "TestInfo ctor" << std::endl; }
 
 // Destructs a TestInfo object.
 TestInfo::~TestInfo() { delete factory_; }
@@ -2248,7 +2248,8 @@ TestInfo* MakeAndRegisterTestInfo(
 
   std::cout << "Creating test info" << std::endl;
   TestInfo* const test_info =
-      new TestInfo(test_case_name, name, type_param, value_param,
+      new TestInfo(std::string(test_case_name), std::string(name),
+                   type_param, value_param,
                    fixture_class_id, factory);
   std::cout << "Add test info" << std::endl;
   GetUnitTestImpl()->AddTestInfo(set_up_tc, tear_down_tc, test_info);
