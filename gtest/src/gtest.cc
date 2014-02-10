@@ -2174,8 +2174,8 @@ bool Test::HasNonfatalFailure() {
 
 // Constructs a TestInfo object. It assumes ownership of the test factory
 // object.
-TestInfo::TestInfo(std::string a_test_case_name,
-                   std::string a_name,
+TestInfo::TestInfo(const std::string& a_test_case_name,
+                   const std::string& a_name,
                    const char* a_type_param,
                    const char* a_value_param,
                    internal::TypeId fixture_class_id,
@@ -2190,8 +2190,9 @@ TestInfo::TestInfo(std::string a_test_case_name,
       should_run_(false),
       is_disabled_(false),
       matches_filter_(false),
-      factory_(factory),
-      result_() { std::cout << "TestInfo ctor" << std::endl; }
+      factory_(factory)
+      //result_()
+{ std::cout << "TestInfo ctor" << std::endl; }
 
 // Destructs a TestInfo object.
 TestInfo::~TestInfo() { delete factory_; }
