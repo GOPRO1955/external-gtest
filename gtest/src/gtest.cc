@@ -4207,10 +4207,13 @@ TestCase* UnitTestImpl::GetTestCase(const char* test_case_name,
                                     const char* type_param,
                                     Test::SetUpTestCaseFunc set_up_tc,
                                     Test::TearDownTestCaseFunc tear_down_tc) {
+
+  std::string tcn(test_case_name);
+
   // Can we find a TestCase with the given name?
   const std::vector<TestCase*>::const_iterator test_case =
       std::find_if(test_cases_.begin(), test_cases_.end(),
-                   TestCaseNameIs(test_case_name));
+                   TestCaseNameIs(tcn));
 
   if (test_case != test_cases_.end())
     return *test_case;
