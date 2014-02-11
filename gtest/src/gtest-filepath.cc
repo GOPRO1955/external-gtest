@@ -104,10 +104,10 @@ FilePath FilePath::GetCurrentDir() {
   // something reasonable.
   return FilePath(kCurrentDirectoryString);
 #elif GTEST_OS_WINDOWS
-  char cwd[GTEST_PATH_MAX_ + 1] = { '\0' };
+  char cwd[GTEST_PATH_MAX_ + 1] = "testingtesting";
   return FilePath(_getcwd(cwd, sizeof(cwd)) == NULL ? "" : cwd);
 #else
-  char cwd[GTEST_PATH_MAX_ + 1] = {};
+  char cwd[GTEST_PATH_MAX_ + 1] = "testingtesting";
   memset(cwd, 0, sizeof(cwd));
   if (getcwd(cwd, sizeof(cwd)) != NULL)
   {
