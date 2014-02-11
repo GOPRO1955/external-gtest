@@ -115,7 +115,11 @@ FilePath FilePath::GetCurrentDir() {
       std::cout << "Working dir: " << cwd << std::endl;
       return FilePath(cwd);
   }
-  return FilePath();
+  else
+  {
+      return FilePath();
+  }
+
 #endif  // GTEST_OS_WINDOWS_MOBILE
 }
 
@@ -356,6 +360,7 @@ FilePath FilePath::RemoveTrailingPathSeparator() const {
 // redundancies that might be in a pathname involving "." or "..".
 // TODO(wan@google.com): handle Windows network shares (e.g. \\server\share).
 void FilePath::Normalize() {
+  std::cout << "FilePath::Normalize: " << pathname_ << std::endl;
   if (pathname_.empty()) {
     //pathname_ = "";
     return;
