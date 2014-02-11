@@ -349,8 +349,8 @@ FilePath FilePath::RemoveTrailingPathSeparator() const {
 // redundancies that might be in a pathname involving "." or "..".
 // TODO(wan@google.com): handle Windows network shares (e.g. \\server\share).
 void FilePath::Normalize() {
-  if (pathname_.c_str() == NULL) {
-    pathname_ = "";
+  if (pathname_.empty()) {
+    //pathname_ = "";
     return;
   }
   const char* src = pathname_.c_str();
