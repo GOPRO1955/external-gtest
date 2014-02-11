@@ -108,7 +108,13 @@ FilePath FilePath::GetCurrentDir() {
   return FilePath(_getcwd(cwd, sizeof(cwd)) == NULL ? "" : cwd);
 #else
   char cwd[GTEST_PATH_MAX_ + 1] = { '\0' };
-  return FilePath(getcwd(cwd, sizeof(cwd)) == NULL ? "" : cwd);
+  if (getcwd(cwd, sizeof(cwd)) != NULL)
+  {
+      std::string working_dir(cwd);
+      std::cout << "Working dir: " << cwd << std::endl;
+      return FilePath(cwd);
+  }
+  return FilePath();
 #endif  // GTEST_OS_WINDOWS_MOBILE
 }
 
