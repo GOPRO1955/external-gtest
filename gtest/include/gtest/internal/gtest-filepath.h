@@ -58,7 +58,7 @@ namespace internal {
 
 class GTEST_API_ FilePath {
  public:
-  FilePath() : pathname_("") { }
+  FilePath() { }
   FilePath(const FilePath& rhs) : pathname_(rhs.pathname_) { }
 
   explicit FilePath(const std::string& pathname) : pathname_(pathname) {
