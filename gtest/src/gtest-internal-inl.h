@@ -661,11 +661,11 @@ class GTEST_API_ UnitTestImpl {
     // RUN_ALL_TESTS().  Therefore we capture the current directory in
     // AddTestInfo(), which is called to register a TEST or TEST_F
     // before main() is reached.
-    if (original_working_dir_.IsEmpty()) {
-      original_working_dir_.Set(FilePath::GetCurrentDir());
+    //if (original_working_dir_.IsEmpty()) {
+      //original_working_dir_.Set(FilePath::GetCurrentDir());
       //GTEST_CHECK_(!original_working_dir_.IsEmpty())
       //    << "Failed to get the current working directory.";
-    }
+    //}
 
     GetTestCase(test_info->test_case_name(),
                 test_info->type_param(),
