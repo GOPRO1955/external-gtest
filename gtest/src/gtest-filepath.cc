@@ -107,8 +107,8 @@ FilePath FilePath::GetCurrentDir() {
   char cwd[GTEST_PATH_MAX_ + 1] = { '\0' };
   return FilePath(_getcwd(cwd, sizeof(cwd)) == NULL ? "" : cwd);
 #else
-  char cwd[GTEST_PATH_MAX_ + 1] = { 0 };
-  //memset(cwd, 0, sizeof(cwd));
+  char cwd[GTEST_PATH_MAX_ + 1] = {};
+  memset(cwd, 0, sizeof(cwd));
   if (getcwd(cwd, sizeof(cwd)) != NULL)
   {
       std::string working_dir(cwd);
